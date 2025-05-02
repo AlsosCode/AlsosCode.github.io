@@ -12,6 +12,12 @@
     <p>Utvikler</p>
   </header>
 
+  <section id="bilde">
+    <div>
+        <img src="profil.jpg" alt="Profilbilde av meg" />
+    </div>
+  </section>
+
   <section id="kontakt">
     <h2>Kontaktinformasjon</h2>
     <ul>
@@ -58,6 +64,30 @@
         <li>Verktøy: Git, Docker, Tableau, Unity</li>
         <li>Arbeidsmetodikk: Agile, DevOps</li>
       </ul>
+  </section>
+
+  <section id="prosjekter og kodeeksempler">
+    <h2>Prosjekter og Kodeeksempler</h2>
+    <div class="prosjekt1">
+        <h3>Simple SocialMedia App</h3>
+        <p>This is a simple React + Express application showcasing user registration,
+             login, post creation, reactions, and comments. It is deployed on Heroku. 
+             The front end uses Vite for quick builds and React Router for navigation. 
+             The back end uses Express with session-based authentication.
+            <br>
+            Data Storage
+            We chose a local data.json for speed and simplicity. 
+            This is suitable for small demos but not production. 
+            Ideally i would use MongoDB but i had some problems setting it up.
+            <br>
+            Verified vs. Unverified
+            Unverified users can react to and comment on posts but cannot create, 
+            edit, or delete. Verified users can create their own posts, 
+            then edit or delete them. 
+            We handle this with two middlewares: 
+            requireLogin (checks session) and 
+            requireVerified (checks if verified === true).</p>
+    </div>
   </section>
 </body>
 </html>
