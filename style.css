@@ -61,6 +61,16 @@
     margin-bottom: 20px;
   }
   
+  .profilbilde {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
   /* Lenker */
   a {
     color: #007acc;
