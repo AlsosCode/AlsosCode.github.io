@@ -1,0 +1,73 @@
+/* Reset og basisoppsett */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    color: #222;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Seksjoner */
+  section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 5px solid #007acc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  section h2 {
+    color: #007acc;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  
+  /* Lister */
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 5px;
+  }
+  
+  /* Erfarings- og utdanningsblokker */
+  .jobb, .utdanning, .semester {
+    margin-bottom: 20px;
+  }
+  
+  /* Lenker */
+  a {
+    color: #007acc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
