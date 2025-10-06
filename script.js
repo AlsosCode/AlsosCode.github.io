@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   el.textContent = ''; // start tom
 
   let i = 0;
-  const baseDelay = 55;       // grunnfart
+  const baseDelay = 65;       // grunnfart
   const jitter = 120;         // variasjon for “menneskelig” følelse
 
   function type() {
