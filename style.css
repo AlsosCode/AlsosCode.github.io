@@ -38,7 +38,7 @@
 .site-header.pixel {
   font-family: "Press Start 2P", system-ui, sans-serif;
   letter-spacing: 0; 
-  position: sticky; top: 0; z-index: 1000;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   /* 8x8 dither bakgrunn med CSS */
   background:
     repeating-linear-gradient(0deg, rgba(0,0,0,.0) 0 6px, rgba(0,0,0,.05) 6px 8px),
