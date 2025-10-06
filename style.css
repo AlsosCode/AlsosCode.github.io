@@ -21,6 +21,43 @@
     margin: 0;                    
   }
 
+  body.om-side {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background-image: url("images/background-2.jpg");
+    background-size: cover;       
+    background-position: center;   
+    background-repeat: no-repeat;  
+    height: 100vh;                
+    margin: 0;      
+    position: center;
+    text-align: center;              
+  }
+  .om-meg {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 24px;
+  background: rgba(10,10,10,0.7);
+  border: 4px solid #ffcc4d;
+  box-shadow: 0 0 0 4px #000 inset;
+}
+
+  .pixel-font {
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  font-size: 12px;           /* små tall ser mer “retro” ut */
+  line-height: 1.8;          /* gi litt luft, fonten er tett */
+  letter-spacing: 1px;       /* gjør teksten mer lesbar */
+  color: #f7f2d3;            /* lys gul/beige farge som matcher pixeltemaet */
+  text-shadow: 2px 2px 0 #000; /* gir den 8-bit “outline” effekten */
+  image-rendering: pixelated; /* for bilder og skrift som skal se skarpe ut */
+}
+
+
   /* === Pixel palette & base === */
 :root {
   --px-bg: #1b1b1bcc;           /* transparent mørk */
