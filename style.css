@@ -5,7 +5,7 @@
     box-sizing: border-box;
   }
   
-  body {
+  body.hovedmeny {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
     color: #333;
@@ -13,71 +13,169 @@
     padding: 20px;
     max-width: 900px;
     margin: auto;
+    background-image: url("images/background-1.png");
+    background-size: cover;       
+    background-position: center;   
+    background-repeat: no-repeat;  
+    height: 100vh;                
+    margin: 0;                    
   }
+
+  /* === Pixel palette & base === */
+:root {
+  --px-bg: #1b1b1bcc;           /* transparent mørk */
+  --px-ink: #f7f2d3;            /* “retro beige” */
+  --px-accent: #ffba0c;         /* gull/lampe */
+  --px-dark: #111217;
+  --px-mid: #2a2d36;
+  --px-green: #7bd389;
+  --px-red: #ff5e57;
+  --px-shadow: #0b0c0f;
+}
+.pixel * { 
+  image-rendering: pixelated; 
+}
+.site-header.pixel {
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  letter-spacing: 0; 
+  position: sticky; top: 0; z-index: 1000;
+  /* 8x8 dither bakgrunn med CSS */
+  background:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.0) 0 6px, rgba(0,0,0,.05) 6px 8px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.03) 0 6px, rgba(255,255,255,.07) 6px 8px),
+    var(--px-bg);
+  border-bottom: 4px solid var(--px-accent);
+  box-shadow: 0 0 0 4px var(--px-shadow) inset;
+}
+
+.pixel .container { height: 72px; }
+/* “Logo” i pixel-ramme */
+.pixel-logo {
+  display: inline-grid; place-items: center;
+  width: 80px; height: 36px;
+  color: var(--px-ink); text-decoration: none;
+  background: var(--px-mid);
+  border: 4px solid var(--px-accent);
+  box-shadow: 0 4px 0 0 var(--px-shadow);
+}
+.pixel-logo span { font-size: 12px; line-height: 1; }
+
+/* Nav-listen */
+.pixel-nav ul { gap: 12px; }
+
+/* 8-bit knapper */
+.btn-pixel {
+  display: inline-block;
+  padding: 10px 12px;
+  color: var(--px-ink); text-decoration: none;
+  background: var(--px-mid);
+  border: 4px solid var(--px-accent);
+  box-shadow: 0 4px 0 0 var(--px-shadow);
+  text-transform: uppercase;
+  font-size: 10px; /* Press Start 2P er liten */
+  line-height: 1;
+}
+.btn-pixel:hover { 
+  background: #353946;
+  transform: translateY(1px);
+  box-shadow: 0 3px 0 0 var(--px-shadow);
+}
+.btn-pixel:active, .site-nav a.active {
+  background: #3f4454;
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 0 var(--px-shadow);
+  border-color: #ffd56b;
+}
+
+/* Piksel-hamburger */
+.pixel-toggle {
+  display: none;
+  width: 40px; height: 32px;
+  background: var(--px-mid); border: 4px solid var(--px-accent);
+  box-shadow: 0 4px 0 0 var(--px-shadow);
+}
+.pixel-toggle .sq {
+  display: block; width: 16px; height: 4px; margin: 3px auto;
+  background: var(--px-ink);
+}
+
+/* Mobil-layout */
+@media (max-width: 800px) {
+  .pixel-toggle { display: inline-block; }
+  .pixel-nav {
+    position: absolute; left: 0; right: 0; top: 72px;
+    background: var(--px-bg);
+    border-bottom: 4px solid var(--px-accent);
+    max-height: 0; overflow: hidden; transition: max-height .2s steps(8, end);
+  }
+  .pixel-nav.open { max-height: 360px; }
+  .pixel-nav ul { flex-direction: column; padding: 8px; gap: 8px; }
+  .btn-pixel { display: block; text-align: center; }
+}
+
+/* Små CRT-aktige pixely details */
+.site-header.pixel:after {
+  content: ""; display: block; height: 4px;
+  background: repeating-linear-gradient(90deg,#0000 0 8px, rgba(255,255,255,.15) 8px 9px, #0000 9px 16px);
+}
   
-  /* Header */
-  header {
-    text-align: center;
-    margin-bottom: 40px;
+  /* Reset/utility */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: system-ui, Arial, sans-serif; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: auto;
+}
+.skip-link:focus { left: 16px; top: 16px; background:#000; color:#fff; padding:8px 12px; border-radius:8px; }
+
+/* Header / navbar */
+.site-header {
+  position: sticky; top: 0; z-index: 1000;
+  backdrop-filter: blur(6px);
+  background: rgba(10,10,10,.55); /* transparent over bakgrunnsbildet ditt */
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.site-header .container {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.brand { color: #fff; text-decoration: none; font-weight: 700; letter-spacing:.5px; }
+
+/* Nav list desktop */
+.site-nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+.site-nav a {
+  color: #f5f5f5; text-decoration: none; padding: 10px 8px; border-radius: 8px;
+}
+.site-nav a:hover { background: rgba(255,255,255,.08); }
+.site-nav a.active { background: rgba(255,255,255,.16); }
+
+/* Hamburger (mobil) */
+.nav-toggle {
+  display: none; background: none; border: 0; cursor: pointer;
+}
+.nav-toggle .bar {
+  display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+/* Responsiv: under 800px blir det hamburger */
+@media (max-width: 800px) {
+  .nav-toggle { display: block; }
+  .site-nav {
+    position: absolute; left: 0; right: 0; top: 64px;
+    background: rgba(10,10,10,.9);
+    max-height: 0; overflow: hidden; transition: max-height .25s ease;
+    border-bottom: 1px solid rgba(255,255,255,.08);
   }
-  
-  header h1 {
-    font-size: 2.5rem;
-    color: #222;
-  }
-  
-  header p {
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
-  /* Seksjoner */
-  section {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-left: 5px solid #007acc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  section h2 {
-    color: #007acc;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-  }
-  
-  /* Lister */
-  ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-  
-  ul li {
-    margin-bottom: 5px;
-  }
-  
-  /* Erfarings- og utdanningsblokker */
-  .jobb, .utdanning, .semester {
-    margin-bottom: 20px;
-  }
-  
-  .profilbilde {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 15px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Lenker */
-  a {
-    color: #007acc;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
+  .site-nav.open { max-height: 320px; } /* viser menyen */
+  .site-nav ul { flex-direction: column; padding: 8px; }
+  .site-nav a { display: block; padding: 12px; }
+}
+
+/* Demo seksjonsstil – valgfritt */
+section { padding: 80px 0; color: #fff; }
+section:nth-child(even) { background: rgba(0,0,0,.25); }
+
   

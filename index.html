@@ -5,85 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Min CV</title>
   <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
 </head>
-<body>
-  <header>
-    <h1>Mathias Alsos Paulsen</h1>
-    <img src="AI-ProfilBilde.png" alt="Profilbilde av meg" class="profilbilde" />
-    <p>Utvikler</p>
-  </header>   
+<body class="hovedmeny">
+<script src="script.js" defer></script>
+<header class="site-header pixel">
+  <div class="container">
+    <a href="#" class="brand pixel-logo" aria-label="Hjem">
+      <span>M.A.P</span>
+      </a>
 
-  <section id="kontakt">
-    <h2>Kontaktinformasjon</h2>
-    <ul>
-      <li>E-post: Mathias.alsos03@gmail.com</li>
-      <li>Telefon: +47 48221090</li>
-      <li>LinkedIn: ...</li>
-    </ul>
-  </section>
+    <button class="nav-toggle pixel-toggle" aria-expanded="false" aria-label="Meny">
+      <span class="sq"></span><span class="sq"></span><span class="sq"></span>
+    </button>
 
-  <section id="erfaring">
-    <h2>Arbeidserfaring</h2>
-    <div class="jobb">
-      <h3>Utvikler – TechFirma AS</h3>
-      <p>2026–></p>
-      <p>Utvikler og vedlikeholder nettsider og webapplikasjoner for ulike kunder.</p>
-    </div>
-    <div class="jobb">
-        <h3>Hobbyprosjekter og selvstendig utvikling</h3>
-        <p>2021–nå</p>
-        <p>Utviklet ulike backend- og webprosjekter for å forbedre ferdigheter i programmering, spesielt innen C, Python og webteknologier.</p>
-      </div>
-    <div class="jobb">
-      <h3>Butikk medarbeider – Rema1000 Stadion</h3>
-      <p>2021–2026</p>
-      <p>Hos Rema1000 Stadion var jeg låseansvarlig og hadde arbeidsoppgaver som å sitte i kassen,
-        kjøre ut og rullere varer, hjelpe kunder, pakke og post, bestilling av varer og sette opp utstillinger.</p>
-    </div>
-  </section>
-
-  <section id="utdanning">
-    <h2>Utdanning</h2>
-    <div class="utdanning">
-      <h3>Informasjonsteknologi - Programmering – Høyskolen Kristiania i Oslo</h3>
-      <p>2023–2026</p>
-    </div>
-  </section>
-
-  <section id="ferdigheter">
-    <h2>Ferdigheter</h2>
-    <ul>
-        <li>Programmeringsspråk: JavaScript, Java, C#, TypeScript, Python, C</li>
-        <li>Webteknologier: HTML5, CSS3, React, Node.js, Express, MongoDB</li>
-        <li>DevOps & verktøy: Docker, Git, GitHub Actions, CI/CD, WebSockets</li>
-        <li>Datavisualisering: Tableau, Unity</li>
-        <li>Arbeidsmetodikk: Agile, Scrum, prosjektledelse</li>
-        <li>Språk: Norsk (morsmål), Engelsk (flytende)</li>
+    <nav class="site-nav pixel-nav" aria-label="Hovedmeny">
+      <ul>
+        <li><a href="om.html" class="nav-link btn-pixel">Om</a></li>
+        <li><a href="#erfaring" class="nav-link btn-pixel">Erfaring</a></li>
+        <li><a href="#utdanning" class="nav-link btn-pixel">Utdanning</a></li>
+        <li><a href="#ferdigheter" class="nav-link btn-pixel">Ferdigheter</a></li>
+        <li><a href="#kontakt" class="nav-link btn-pixel">Kontakt</a></li>
       </ul>
-  </section>
-
-  <section id="prosjekter og kodeeksempler">
-    <h2>Prosjekter og Kodeeksempler</h2>
-    <div class="prosjekt1">
-        <h3>Simple SocialMedia App</h3>
-        <p>This is a simple React + Express application showcasing user registration,
-             login, post creation, reactions, and comments. It is deployed on Heroku. 
-             The front end uses Vite for quick builds and React Router for navigation. 
-             The back end uses Express with session-based authentication.
-            <br>
-            Data Storage
-            We chose a local data.json for speed and simplicity. 
-            This is suitable for small demos but not production. 
-            Ideally i would use MongoDB but i had some problems setting it up.
-            <br>
-            Verified vs. Unverified
-            Unverified users can react to and comment on posts but cannot create, 
-            edit, or delete. Verified users can create their own posts, 
-            then edit or delete them. 
-            We handle this with two middlewares: 
-            requireLogin (checks session) and 
-            requireVerified (checks if verified === true).</p>
-    </div>
-  </section>
+    </nav>
+  </div>
+</header>
 </body>
 </html>
