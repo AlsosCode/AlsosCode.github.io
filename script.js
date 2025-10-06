@@ -33,3 +33,34 @@ links.forEach(l => l.addEventListener('click', () => {
   nav.classList.remove('open');
   btn.setAttribute('aria-expanded', 'false');
 }));
+
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('type-title');
+  if (!el) return;
+
+  const full = el.getAttribute('data-text') || el.textContent.trim();
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { el.textContent = full; return; }
+
+  el.textContent = ''; // start tom
+
+  let i = 0;
+  const baseDelay = 55;       // grunnfart
+  const jitter = 120;         // variasjon for “menneskelig” følelse
+
+  function type() {
+    if (i <= full.length) {
+      el.textContent = full.slice(0, i);
+      i++;
+
+      // litt tilfeldig timing for retro/organisk rytme
+      const delay = baseDelay + Math.random() * jitter;
+      setTimeout(type, delay);
+    } else {
+      // valgfritt: lite “beep” eller pause — vi lar den bare stå ferdig
+    }
+  }
+
+  type();
+});
+
