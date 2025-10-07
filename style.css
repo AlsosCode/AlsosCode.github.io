@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+
 /* Main strekker seg så footer dyttes ned */
 main {
   flex: 1;
@@ -106,7 +106,7 @@ body.kontakt-side {
 
 /* Cursoren (│) */
 #type-title::after {
-  content: "▮";                /* vertikal blokk */
+  content: "|";                /* vertikal blokk */
   display: inline-block;
   margin-left: 4px;
   animation: blink 1s steps(1, end) infinite;
