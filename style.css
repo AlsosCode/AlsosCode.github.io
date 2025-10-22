@@ -156,12 +156,14 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 20px;
-  width: 44px;
-  height: 24px;
+  width: 50px;
+  height: 26px;
   cursor: pointer;
   position: relative;
   transition: all 0.3s ease;
   padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .theme-toggle:hover {
@@ -173,18 +175,42 @@ body {
   outline-offset: 2px;
 }
 
+/* Toggle slider circle */
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .theme-toggle::after {
+  transform: translateX(24px);
+  background: var(--text);
+}
+
+/* Sun/Moon icons */
 .theme-toggle::before {
   content: '☀️';
   position: absolute;
   top: 50%;
-  left: 3px;
+  left: 6px;
   transform: translateY(-50%);
-  font-size: 14px;
-  transition: opacity 0.3s ease;
+  font-size: 12px;
+  z-index: 1;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
 }
 
 [data-theme="dark"] .theme-toggle::before {
   content: '🌙';
+  left: auto;
+  right: 6px;
 }
 
 /* Mobile menu toggle */
