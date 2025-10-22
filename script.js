@@ -201,4 +201,63 @@
   });
 })();
 
+// ═══════════════════════════════════════════════════════════════
+// CONTACT FORM HANDLER
+// ═══════════════════════════════════════════════════════════════
+(function initContactForm() {
+  const form = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message')
+      };
+
+      // Disable submit button while sending
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        // Using Formspree.io - a free form backend service
+        // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
+        // Sign up at https://formspree.io/ to get your form ID
+        const response = await fetch('https://formspree.io/f/mpwygqqv', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+          formStatus.className = 'form-status success';
+          form.reset();
+        } else {
+          throw new Error('Failed to send message');
+        }
+      } catch (error) {
+        formStatus.textContent = 'Oops! Something went wrong. Please try emailing me directly.';
+        formStatus.className = 'form-status error';
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+
+        // Hide status message after 5 seconds
+        setTimeout(() => {
+          formStatus.style.display = 'none';
+        }, 5000);
+      }
+    });
+  }
+})();
+
 console.log('Portfolio initialized ✓');
