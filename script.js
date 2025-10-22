@@ -209,8 +209,20 @@
   const formStatus = document.getElementById('formStatus');
 
   if (form) {
+    // Rate limiting: Prevent spam by limiting submissions
+    let lastSubmitTime = 0;
+    const MIN_SUBMIT_INTERVAL = 5000; // 5 seconds between submissions
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Rate limiting check
+      const now = Date.now();
+      if (now - lastSubmitTime < MIN_SUBMIT_INTERVAL) {
+        formStatus.textContent = 'Please wait a moment before sending another message.';
+        formStatus.className = 'form-status error';
+        return;
+      }
 
       const formData = new FormData(form);
       const data = {
@@ -219,6 +231,34 @@
         message: formData.get('message')
       };
 
+      // Basic validation
+      if (!data.name || !data.email || !data.message) {
+        formStatus.textContent = 'Please fill in all fields.';
+        formStatus.className = 'form-status error';
+        return;
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(data.email)) {
+        formStatus.textContent = 'Please enter a valid email address.';
+        formStatus.className = 'form-status error';
+        return;
+      }
+
+      // Length validation to prevent abuse
+      if (data.message.length < 10) {
+        formStatus.textContent = 'Message is too short. Please provide more details.';
+        formStatus.className = 'form-status error';
+        return;
+      }
+
+      if (data.message.length > 5000) {
+        formStatus.textContent = 'Message is too long. Please keep it under 5000 characters.';
+        formStatus.className = 'form-status error';
+        return;
+      }
+
       // Disable submit button while sending
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
@@ -226,18 +266,22 @@
       submitBtn.disabled = true;
 
       try {
-        // Using Formspree.io - a free form backend service
-        // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
-        // Sign up at https://formspree.io/ to get your form ID
+        // Using Formspree.io - form ID is public but protected by:
+        // 1. Formspree's built-in spam protection
+        // 2. Rate limiting implemented above
+        // 3. Domain restrictions (set in Formspree dashboard)
+        // 4. reCAPTCHA (enable in Formspree settings for extra protection)
         const response = await fetch('https://formspree.io/f/mpwygqqv', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
           },
           body: JSON.stringify(data)
         });
 
         if (response.ok) {
+          lastSubmitTime = now; // Update last submit time
           formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
           formStatus.className = 'form-status success';
           form.reset();
