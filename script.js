@@ -293,6 +293,34 @@
 })();
 
 // ═══════════════════════════════════════════════════════════════
+// PROJECTS HORIZONTAL SCROLL HINT
+// ═══════════════════════════════════════════════════════════════
+(function initProjectsScrollHint() {
+  const wrapper = document.getElementById('projectsWrapper');
+  const grid = document.getElementById('projectsGrid');
+  const hint = document.getElementById('scrollHint');
+
+  if (!wrapper || !grid) return;
+
+  function updateScrollState() {
+    const maxScroll = grid.scrollWidth - grid.clientWidth;
+    const atStart = grid.scrollLeft <= 8;
+    const atEnd = grid.scrollLeft >= maxScroll - 8;
+
+    wrapper.classList.toggle('scrolled-start', !atStart);
+    wrapper.classList.toggle('scrolled-end', atEnd);
+
+    if (hint) {
+      hint.style.opacity = atStart ? '1' : '0';
+    }
+  }
+
+  grid.addEventListener('scroll', updateScrollState, { passive: true });
+  window.addEventListener('resize', updateScrollState);
+  updateScrollState();
+})();
+
+// ═══════════════════════════════════════════════════════════════
 // FOOTER COPYRIGHT YEAR
 // ═══════════════════════════════════════════════════════════════
 (function initCopyrightYear() {
