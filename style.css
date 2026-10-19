@@ -430,11 +430,55 @@ section {
 /* ═══════════════════════════════════════════════════════════════
    PROJECTS SECTION
    ═══════════════════════════════════════════════════════════════ */
+.scroll-hint {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: var(--muted);
+  margin-top: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.projects-scroll-wrapper {
+  position: relative;
+  margin-top: 24px;
+}
+
+.projects-scroll-wrapper::before,
+.projects-scroll-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 20px;
+  width: 56px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.projects-scroll-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+
+.projects-scroll-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+  opacity: 1;
+}
+
+.projects-scroll-wrapper.scrolled-start::before {
+  opacity: 1;
+}
+
+.projects-scroll-wrapper.scrolled-end::after {
+  opacity: 0;
+}
+
 .projects-grid {
   display: flex;
   align-items: flex-start;
   gap: 24px;
-  margin-top: 48px;
   padding-bottom: 20px;
   overflow-x: auto;
   scroll-snap-type: x proximity;
