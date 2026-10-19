@@ -1,99 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mathias Alsos Paulsen - Developer Portfolio & CV">
-  <title>Mathias Alsos Paulsen | Developer Portfolio</title>
+  <meta name="description" content="Mathias Alsos Paulsen – nyutdannet fullstack-utvikler fra Fredrikstad. Portefølje og CV med prosjekter i TypeScript, React, Next.js og AI-integrasjon.">
+  <title>Mathias Alsos Paulsen | Fullstack-utvikler</title>
+
+  <link rel="canonical" href="https://alsoscode.github.io">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alsoscode.github.io">
+  <meta property="og:title" content="Mathias Alsos Paulsen | Fullstack-utvikler">
+  <meta property="og:description" content="Nyutdannet fullstack-utvikler fra Fredrikstad. Portefølje og CV med prosjekter i TypeScript, React, Next.js og AI-integrasjon.">
+  <meta property="og:image" content="https://alsoscode.github.io/images/appstore.png">
+  <meta property="og:locale" content="nb_NO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mathias Alsos Paulsen | Fullstack-utvikler">
+  <meta name="twitter:description" content="Nyutdannet fullstack-utvikler fra Fredrikstad. Portefølje og CV med prosjekter i TypeScript, React, Next.js og AI-integrasjon.">
+  <meta name="twitter:image" content="https://alsoscode.github.io/images/appstore.png">
+
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="images/appstore.png">
 </head>
 <body>
-  <!-- NAVIGATION -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
+  <!-- NAVIGASJON -->
+  <nav class="nav" role="navigation" aria-label="Hovednavigasjon">
     <div class="nav-container">
-      <a href="#hero" class="nav-brand" aria-label="Home">M.A.P</a>
+      <a href="#hero" class="nav-brand" aria-label="Hjem">M.A.P</a>
 
-      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="mobile-toggle" aria-label="Åpne/lukk meny" aria-expanded="false">
         ☰
       </button>
 
       <ul class="nav-links">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#experience" class="nav-link">Erfaring</a></li>
+        <li><a href="#projects" class="nav-link">Prosjekter</a></li>
+        <li><a href="#skills" class="nav-link">Ferdigheter</a></li>
+        <li><a href="#education" class="nav-link">Utdanning</a></li>
+        <li><a href="#contact" class="nav-link">Kontakt</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+          <button class="theme-toggle" aria-label="Bytt mellom lys og mørk modus"></button>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- HERO / INTRO -->
   <section id="hero">
     <div class="container">
       <h1 class="hero-title">Mathias Alsos Paulsen</h1>
-      <p class="hero-subtitle">Developer & Problem Solver</p>
+      <p class="hero-subtitle">Fullstack-utvikler · Fredrikstad, Norge</p>
+
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <span class="terminal-dot dot-red"></span>
+          <span class="terminal-dot dot-yellow"></span>
+          <span class="terminal-dot dot-green"></span>
+          <span class="terminal-title">mathias@dev:~</span>
+        </div>
+        <div class="terminal-body">
+          <p class="terminal-line"><span class="t-prompt">$</span> whoami</p>
+          <p class="terminal-output">&gt; Mathias Alsos Paulsen — fullstack-utvikler</p>
+
+          <p class="terminal-line"><span class="t-prompt">$</span> cat skills.txt</p>
+          <p class="terminal-output">&gt; TypeScript | React | Next.js | REST API | AI-integrasjon</p>
+
+          <p class="terminal-line"><span class="t-prompt">$</span> cat recent_project.txt</p>
+          <p class="terminal-output">&gt; Bygde en AI-assistent med Claude API for PEERS AS<br>&gt; som fyller ut event-skjema i sanntid via chat</p>
+
+          <p class="terminal-line"><span class="t-prompt">$</span> echo $STATUS</p>
+          <p class="terminal-output">&gt; Nyutdannet. Klar for neste steg.</p>
+        </div>
+      </div>
+
+      <p class="hero-intro-text">
+        Jeg er en nyutdannet fullstack-utvikler med bachelor i programmering fra Høyskolen Kristiania.
+        Jeg jobber helst med TypeScript, React og Next.js, og liker å bygge løsninger som gjør hverdagen
+        enklere for brukerne. I bacheloroppgaven ledet jeg et team på fire som utviklet en AI-assistent
+        for eventplattformen til PEERS AS – integrert i en eksisterende Next.js-kodebase med
+        sanntids-streaming fra Claude API.
+      </p>
+
+      <p class="hero-personal">
+        Fredrikstad-gutt og FFK-supporter. Baker surdeigsbrød, lager mat, og spiller FC og Overwatch på fritiden.
+      </p>
+
       <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="cv/Mathias_Alsos_Paulsen_CV.pdf" download class="btn btn-secondary">Download CV</a>
+        <a href="#projects" class="btn btn-primary">Se prosjektene mine</a>
+        <a href="cv/Mathias_Alsos_Paulsen_CV.pdf" download class="btn btn-secondary">Last ned CV</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
+  <!-- ERFARING -->
+  <section id="experience">
     <div class="container">
-      <h2 class="section-title">About</h2>
-      <div class="about-content">
-        <p class="about-text">
-          Hi! My name is Mathias Alsos Paulsen, a 22-year-old developer based in Fredrikstad, Norway.
-          I'm a motivated and curious individual with a strong passion for technology and programming.
-          I hold a Bachelor's degree in IT and Information Systems from Kristiania University College,
-          and have experience working with various programming languages and technologies.
-        </p>
-        <p class="about-text">
-          Feel free to get in touch if you'd like to know more about me!
-        </p>
-      </div>
-    </div>
-  </section>
+      <h2 class="section-title">Erfaring</h2>
+      <p class="section-subtitle">Faglig bakgrunn</p>
 
-  <!-- PROJECTS SECTION -->
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-subtitle">Selected work and contributions</p>
-
-      <div class="projects-grid">
-        <div class="project-card card">
-          <img src="images/Drag&DropTaskListApp.png" alt="Screenshot of Drag & Drop Task List App" class="project-image1">
-          <h3 class="project-title">Drag & Drop Task List App</h3>
-          <p class="project-description">
-            A modern task management application with intuitive drag-and-drop functionality, Google OAuth authentication, and dark mode. Features per-user data isolation and seamless sync across devices.
-          </p>
-          <div class="project-tags">
-            <span class="tag">React 18</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Tailwind CSS</span>
-            <span class="tag">Google OAuth</span>
-            <span class="tag">Vite</span>
+      <div class="timeline">
+        <div class="timeline-item card">
+          <div class="timeline-header">
+            <h3 class="timeline-title">Fullstack-utvikler (praksis) – Gruppeleder</h3>
+            <span class="timeline-date">Jan. 2026 – Mai 2026</span>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/AlsosCode/Drag-Drop-Task-List-App" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
-            <a href="https://drag-drop-task-list-app.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo</a>
-          </div>
+          <p class="timeline-company">PEERS AS, Oslo</p>
+          <ul class="timeline-list">
+            <li>Ledet et team på fire som bygde en konversasjonell AI-assistent integrert i PEERS sin event-plattform</li>
+            <li>Utviklet chat-grensesnitt med sanntids-streaming (SSE) fra Anthropic Claude API i en Next.js/TypeScript-kodebase</li>
+            <li>Jobbet på tvers av frontend og backend gjennom hele prosjektløpet</li>
+            <li>Koordinerte arbeidsfordeling, sprinter og kommunikasjon med oppdragsgiver</li>
+            <li>Presenterte løsningen for ledelsen i PEERS, som var fornøyde med resultatet</li>
+          </ul>
         </div>
 
-        <!-- Add more project cards as needed -->
+        <div class="timeline-item card">
+          <div class="timeline-header">
+            <h3 class="timeline-title">Butikkmedarbeider</h3>
+            <span class="timeline-date">2019 – nå</span>
+          </div>
+          <p class="timeline-company">Rema 1000 Stadion, Fredrikstad</p>
+          <ul class="timeline-list">
+            <li>Kundeservice, kasse, varepåfylling og ansvar for frys, kjøl og frukt/grønt</li>
+            <li>Betrodd stengeansvar; bidro til omorganisering av butikkens layout</li>
+            <li>Lærte opp 5–10 nye kolleger og hjalp andre Rema 1000-butikker i travle perioder</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROSJEKTER -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Prosjekter</h2>
+      <p class="section-subtitle">Utvalgt arbeid og bidrag</p>
+
+      <div class="projects-grid">
+        <!-- AI Event Assistant – PEERS AS -->
         <div class="project-card card">
-          <img src="images/PKMN-Binder.png" alt="Screenshot of Pokemon Binder App" class="project-image2">
-          <h3 class="project-title">Pokemon Binder - Digital TCG Collection Manager</h3>
+          <h3 class="project-title">AI Event Assistant – PEERS AS (bacheloroppgave)</h3>
           <p class="project-description">
-            A microservices-based Pokemon TCG collection manager demonstrating event-driven architecture, service discovery, and API Gateway patterns. Features separate services for catalog management, user collections, and media serving with asynchronous communication via RabbitMQ.
+            En AI-assistent der brukeren beskriver et event i naturlig språk, og assistenten fyller ut
+            event-skjemaet automatisk i sanntid. Bygget som bacheloroppgave for PEERS AS, integrert i
+            deres eksisterende Next.js-kodebase.
+          </p>
+          <ul class="feature-list">
+            <li>Backend API-route som strømmer svar ord for ord via Server-Sent Events, med todelt output: samtaletekst og JSON-blokk med feltoppdateringer</li>
+            <li>Sikkerhet og robusthet: rate limiting (20 forespørsler/time per bruker), input-sanitering og allowlist over hvilke skjemafelt AI-en kan endre</li>
+            <li>Håndterer relative datoer («neste fredag») ved å gi dato og tidssone i systemprompten</li>
+            <li>Frontend-chat med streaming via ReadableStream, «felt oppdatert»-bekreftelser, forslagschips og auto-resizing tekstfelt</li>
+            <li>Aktiverte Turbopack og kuttet kompileringstid ved hot reload fra 7–8 minutter til 4–5 sekunder (~97 % reduksjon)</li>
+            <li>Løste blant annet en React Context-scope-bug der AI-handlinger ble stille ignorert, og bufring av skilletegn i SSE-strømmen</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Anthropic Claude API</span>
+            <span class="tag">SSE</span>
+            <span class="tag">Prisma</span>
+            <span class="tag">Turbopack</span>
+          </div>
+          <p class="project-role">Rolle: Gruppeleder og fullstack-utvikler i team på fire. Scrum med to-ukers sprinter, Slack-standups og backlog i Notion.</p>
+          <p class="project-note">Kode er hos oppdragsgiver (ikke offentlig tilgjengelig).</p>
+        </div>
+
+        <!-- Pokémon TCG Restock Tracker -->
+        <div class="project-card card">
+          <span class="status-badge status-planned">Planlagt</span>
+          <h3 class="project-title">Pokémon TCG Restock Tracker</h3>
+          <p class="project-description">
+            Skal overvåke norske nettbutikker for restock av Pokémon-kort og om forhåndsbestilling har
+            åpnet. Nettsiden skal vise produktbilder og lenke direkte til butikken. Selvhostet på
+            Raspberry Pi 5 (Debian).
+          </p>
+          <div class="project-tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Tailwind/shadcn</span>
+            <span class="tag">SQLite + Drizzle ORM</span>
+            <span class="tag">node-cron</span>
+            <span class="tag">Zod</span>
+            <span class="tag">Docker Compose</span>
+          </div>
+          <p class="project-note">Status: Planleggingsfase – serveren er satt opp, men utviklingen har ikke startet.</p>
+        </div>
+
+        <!-- Scout AI -->
+        <div class="project-card card">
+          <h3 class="project-title">Scout AI – Fotball-kampprediktor</h3>
+          <p class="project-description">
+            App som predikerer fotballkamper med statistiske modeller.
+          </p>
+          <ul class="feature-list">
+            <li>Poisson-fordeling for mål, expected goals (xG), BTTS-sannsynlighet, formanalyse og innbyrdes oppgjør</li>
+            <li>Database med 90+ klubber og landslag fra de fem store ligaene og internasjonalt</li>
+            <li>Henter ekte xG-data fra understat.com</li>
+            <li>Fant og fikset fire bugs som gjorde at modellen overfavoriserte hjemmelag, blant annet dobbel hjemmefordel i xG-beregningen</li>
+            <li>Videreutviklet fra v1 til v3 med momentumgrafer, prediksjonshistorikk og delbare prediksjonskort</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+          <p class="project-note">Ikke offentlig tilgjengelig.</p>
+        </div>
+
+        <!-- Småtroll -->
+        <div class="project-card card">
+          <h3 class="project-title">Småtroll – Kommunikasjonsapp for barnehager</h3>
+          <p class="project-description">
+            App for kommunikasjon mellom barnehage og foreldre – inn- og utsjekk av barn, aktivitetsfeed,
+            barneprofiler og innlegg med bilder.
+          </p>
+          <div class="project-tags">
+            <span class="tag">React Native</span>
+            <span class="tag">Express</span>
+            <span class="tag">MongoDB</span>
+          </div>
+          <p class="project-role">
+            Mitt bidrag: Frontend- og backend-utvikling i et team på sju, prosjektdokumentasjon, rapport
+            fra spørreundersøkelse (33 respondenter), presentasjonsvideo, samt navn og logo-design.
+            Metodikk: Scrum med Google Design Sprint.
+          </p>
+        </div>
+
+        <!-- Pokemon TCG Binder – mikrotjenester -->
+        <div class="project-card card">
+          <img src="images/PKMN-Binder.png" alt="Skjermbilde av Pokémon TCG Binder" class="project-image2">
+          <h3 class="project-title">Pokémon TCG Binder – mikrotjenester (skoleprosjekt)</h3>
+          <p class="project-description">
+            Virtuell Pokémon-samlingsperm bygget som mikrotjenestearkitektur, med API-gateway, katalog-,
+            samlings- og medietjeneste som kommuniserer asynkront via RabbitMQ.
           </p>
           <div class="project-tags">
             <span class="tag">Spring Boot</span>
@@ -108,169 +247,208 @@
             <a href="https://pg3402-microservices-exam.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo</a>
           </div>
         </div>
+
+        <!-- Denne nettsiden -->
+        <div class="project-card card">
+          <h3 class="project-title">Denne nettsiden</h3>
+          <p class="project-description">
+            Min CV- og portefølje-side, bygget med fokus på ren kode, mørk/lys-modus og god tilgjengelighet.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/AlsosCode/AlsosCode.github.io" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
+            <a href="https://alsoscode.github.io" target="_blank" rel="noopener noreferrer" class="project-link">Live</a>
+          </div>
+        </div>
+
+        <!-- Drag & Drop Task List App -->
+        <div class="project-card card">
+          <img src="images/Drag&DropTaskListApp.png" alt="Skjermbilde av Drag & Drop Task List App" class="project-image1">
+          <h3 class="project-title">Drag & Drop Task List App</h3>
+          <p class="project-description">
+            Et moderne oppgavehåndteringsverktøy med intuitiv dra-og-slipp-funksjonalitet, Google
+            OAuth-innlogging og mørk modus. Egne data per bruker og sømløs synkronisering mellom enheter.
+          </p>
+          <div class="project-tags">
+            <span class="tag">React 18</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Google OAuth</span>
+            <span class="tag">Vite</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/AlsosCode/Drag-Drop-Task-List-App" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
+            <a href="https://drag-drop-task-list-app.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS SECTION -->
+  <!-- FERDIGHETER -->
   <section id="skills">
     <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <p class="section-subtitle">Technologies and tools I work with</p>
+      <h2 class="section-title">Ferdigheter</h2>
+      <p class="section-subtitle">Teknologier og verktøy jeg jobber med</p>
 
       <div class="skills-grid">
         <div class="skill-category">
-          <h3 class="skill-category-title">Languages</h3>
+          <h3 class="skill-category-title">Kjerne</h3>
           <div class="skill-tags">
+            <span class="skill-tag">TypeScript</span>
             <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">Backend og data</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express</span>
+            <span class="skill-tag">REST API</span>
+            <span class="skill-tag">Prisma</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">AI</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Anthropic Claude API</span>
+            <span class="skill-tag">SSE-streaming</span>
+            <span class="skill-tag">Prompt engineering</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">Verktøy og drift</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Linux (Debian)</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Turbopack</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">Også erfaring med</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">C (Linux, sockets, tråder)</span>
+            <span class="skill-tag">React Native</span>
             <span class="skill-tag">HTML/CSS</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category-title">Frameworks & Libraries</h3>
+          <h3 class="skill-category-title">Arbeidsmåte</h3>
           <div class="skill-tags">
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Express</span>
+            <span class="skill-tag">Scrum</span>
+            <span class="skill-tag">Teamledelse</span>
+            <span class="skill-tag">Teknisk dokumentasjon</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category-title">Tools & Platforms</h3>
+          <h3 class="skill-category-title">Språk</h3>
           <div class="skill-tags">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">VS Code</span>
-            <span class="skill-tag">Docker</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-category-title">Other</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">Norsk (morsmål)</span>
+            <span class="skill-tag">Engelsk (flytende)</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE SECTION -->
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Experience</h2>
-      <p class="section-subtitle">Professional journey</p>
-<!--
-      <div class="timeline">
-        <div class="timeline-item card">
-          <div class="timeline-header">
-            <h3 class="timeline-title">Your Job Title</h3>
-            <span class="timeline-date">2023 - Present</span>
-          
-          </div>
-          <p class="timeline-company">Company Name</p>
-          <p class="timeline-description">
-            Description of your role, responsibilities, and achievements. Replace this with your actual work experience.
-          </p>
-        </div>
-              -->
-        <div class="timeline-item card">
-          <div class="timeline-header">
-            <h3 class="timeline-title">Store Assistant</h3>
-            <span class="timeline-date">2021 - 2026</span>
-          </div>
-          <p class="timeline-company">Rema 1000 Stadion</p>
-          <p class="timeline-description">
-            As a store assistant, I have taken on a variety of responsibilities in customer service, 
-            inventory management, and daily operations. My duties include operating the checkout, 
-            restocking and ordering products, and managing the frozen, refrigerated, and produce departments. 
-            I have also been trusted with store closing responsibilities, 
-            contributed to reorganizing the store layout for improved efficiency, and trained new colleagues. 
-            Additionally, I have provided support to other Rema 1000 stores when extra staff was needed.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION SECTION -->
+  <!-- UTDANNING -->
   <section id="education">
     <div class="container">
-      <h2 class="section-title">Education</h2>
-      <p class="section-subtitle">Academic background</p>
+      <h2 class="section-title">Utdanning</h2>
+      <p class="section-subtitle">Akademisk bakgrunn</p>
 
       <div class="education-grid">
         <div class="education-card card">
-          <h3 class="education-degree">Bachelor's Degree in IT and Information Systems</h3>
-          <p class="education-school">Kristiania University College</p>
-          <p class="education-date">Graduate June 2026</p>
+          <h3 class="education-degree">Bachelor i informasjonsteknologi – Programmering</h3>
+          <p class="education-school">Høyskolen Kristiania, Oslo</p>
+          <p class="education-date">Aug. 2023 – Juni 2026</p>
           <p class="education-description">
-            Studied various aspects of IT including software development, systems design, and information management.
+            Relevante emner og erfaringer:
           </p>
+          <div class="skill-tags">
+            <span class="skill-tag">C-programmering i Linux (gcc, makefiles, tråder, mutex/semaforer)</span>
+            <span class="skill-tag">TCP-server mot rå sockets</span>
+            <span class="skill-tag">Reverse engineering av ukjent protokoll (eksamen)</span>
+            <span class="skill-tag">Mikrotjenester med Docker</span>
+            <span class="skill-tag">Smidig utvikling (Scrum)</span>
+          </div>
         </div>
-
-        <!-- Add more education entries if needed -->
       </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- KONTAKT -->
   <section id="contact">
     <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-subtitle">Let's connect</p>
+      <h2 class="section-title">Kontakt</h2>
+      <p class="section-subtitle">Ta gjerne kontakt</p>
 
       <div class="contact-content">
         <form class="contact-form" id="contactForm">
           <div class="form-group">
-            <label for="name" class="form-label">Name</label>
+            <label for="name" class="form-label">Navn</label>
             <input
               type="text"
               id="name"
               name="name"
               class="form-input"
               required
-              placeholder="Your name"
+              placeholder="Ditt navn"
             >
           </div>
 
           <div class="form-group">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">E-post</label>
             <input
               type="email"
               id="email"
               name="email"
               class="form-input"
               required
-              placeholder="your.email@example.com"
+              placeholder="din.epost@eksempel.no"
             >
           </div>
 
           <div class="form-group">
-            <label for="message" class="form-label">Message</label>
+            <label for="message" class="form-label">Melding</label>
             <textarea
               id="message"
               name="message"
               class="form-input form-textarea"
               required
               rows="5"
-              placeholder="Your message..."
+              placeholder="Din melding..."
             ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="submit" class="btn btn-primary">Send melding</button>
 
           <div class="form-status" id="formStatus"></div>
         </form>
 
         <div class="contact-info">
           <p class="contact-text">
-            Or reach out directly:
+            Eller ta kontakt direkte:
           </p>
           <a href="mailto:Mathias.Alsos03@gmail.com" class="contact-email-link">
             Mathias.Alsos03@gmail.com
@@ -281,7 +459,7 @@
           <a href="https://github.com/AlsosCode" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/mathias-alsos-paulsen-43108a204/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <a href="https://linkedin.com/in/mathias-alsos-paulsen" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
             LinkedIn
           </a>
         </div>
@@ -292,7 +470,7 @@
   <!-- FOOTER -->
   <footer id="footer">
     <div class="container" style="text-align: center; padding: 40px 0;">
-      <p>&copy; 2025 Mathias Alsos Paulsen. All rights reserved.</p>
+      <p>&copy; <span id="copyrightYear"></span> Mathias Alsos Paulsen. Alle rettigheter forbeholdt.</p>
     </div>
   </footer>
 

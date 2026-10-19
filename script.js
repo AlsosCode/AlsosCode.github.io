@@ -5,11 +5,10 @@
   const htmlEl = document.documentElement;
   const themeToggle = document.querySelector('.theme-toggle');
 
-  // Check for saved theme preference or default to system preference
+  // Dark mode is the default (matches the terminal aesthetic); only an
+  // explicit saved choice of 'light' overrides it.
   const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+  const currentTheme = savedTheme || 'dark';
 
   if (currentTheme === 'dark') {
     htmlEl.setAttribute('data-theme', 'dark');
@@ -30,17 +29,6 @@
       localStorage.setItem('theme', newTheme);
     });
   }
-
-  // Listen for system theme changes
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-      if (e.matches) {
-        htmlEl.setAttribute('data-theme', 'dark');
-      } else {
-        htmlEl.removeAttribute('data-theme');
-      }
-    }
-  });
 })();
 
 // ═══════════════════════════════════════════════════════════════
@@ -301,6 +289,16 @@
         }, 5000);
       }
     });
+  }
+})();
+
+// ═══════════════════════════════════════════════════════════════
+// FOOTER COPYRIGHT YEAR
+// ═══════════════════════════════════════════════════════════════
+(function initCopyrightYear() {
+  const yearEl = document.getElementById('copyrightYear');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
 })();
 
