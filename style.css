@@ -651,6 +651,7 @@ section {
   gap: 12px;
   width: max-content;
   animation-name: ticker-scroll;
+  animation-duration: 20s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
