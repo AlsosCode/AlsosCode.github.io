@@ -611,31 +611,58 @@ section {
 /* ═══════════════════════════════════════════════════════════════
    SKILLS SECTION
    ═══════════════════════════════════════════════════════════════ */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+.skills-ticker-list {
+  display: flex;
+  flex-direction: column;
   margin-top: 48px;
 }
 
-.skill-category {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--border-radius);
-  padding: 24px;
-  transition: all 0.3s ease;
+.skills-ticker-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.skill-category:hover {
-  border-color: var(--accent);
-  box-shadow: 0 4px 12px var(--shadow);
+.skills-ticker-row:last-child {
+  border-bottom: none;
 }
 
-.skill-category-title {
-  font-size: 18px;
+.ticker-label {
+  flex: 0 0 auto;
+  width: 160px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 16px;
+  font-family: var(--font-mono);
+}
+
+.ticker-viewport {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 32px, black calc(100% - 32px), transparent);
+  mask-image: linear-gradient(to right, transparent, black 32px, black calc(100% - 32px), transparent);
+}
+
+.ticker-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation-name: ticker-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.skills-ticker-row:hover .ticker-track,
+.skills-ticker-row:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .skill-tags {
@@ -646,6 +673,8 @@ section {
 
 .skill-tag {
   display: inline-block;
+  flex-shrink: 0;
+  white-space: nowrap;
   padding: 6px 14px;
   background: var(--bg);
   border: 1px solid var(--border);
@@ -659,6 +688,24 @@ section {
   background: var(--accent);
   color: white;
   border-color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+
+  .ticker-viewport {
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .ticker-track [aria-hidden="true"] {
+    display: none;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -956,6 +1003,20 @@ section {
 
   .project-card {
     flex-basis: 85vw;
+  }
+
+  .skills-ticker-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .ticker-label {
+    width: auto;
+  }
+
+  .ticker-viewport {
+    width: 100%;
   }
 
   .hero-title {
