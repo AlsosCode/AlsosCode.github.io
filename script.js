@@ -293,6 +293,61 @@
 })();
 
 // ═══════════════════════════════════════════════════════════════
+// SKILLS TICKER (fills the row width so there's no empty gap,
+// regardless of viewport size or how many tags a category has)
+// ═══════════════════════════════════════════════════════════════
+(function initSkillsTicker() {
+  const tracks = document.querySelectorAll('.ticker-track');
+  if (!tracks.length) return;
+
+  const PIXELS_PER_SECOND = 40;
+
+  function buildTicker(track) {
+    // Capture the original, single set of tags once, so repeated
+    // builds (e.g. on resize) always start from the real content.
+    if (!track.dataset.baseHtml) {
+      track.dataset.baseHtml = track.innerHTML;
+    }
+
+    track.innerHTML = track.dataset.baseHtml;
+
+    const viewportWidth = track.parentElement.clientWidth;
+    let unitWidth = track.scrollWidth;
+    if (unitWidth === 0) return;
+
+    // Repeat the base set until it's at least as wide as the row,
+    // so there's never empty space before the loop restarts.
+    while (unitWidth < viewportWidth) {
+      track.innerHTML += track.dataset.baseHtml;
+      unitWidth = track.scrollWidth;
+    }
+
+    // Duplicate that whole (now wide-enough) unit once more so the
+    // 0% -> -50% animation loops seamlessly.
+    const unitHtml = track.innerHTML;
+    track.innerHTML = unitHtml + unitHtml;
+
+    // Hide the duplicated half from assistive tech.
+    const children = Array.from(track.children);
+    children.slice(children.length / 2).forEach((el) => el.setAttribute('aria-hidden', 'true'));
+
+    track.style.animationDuration = `${unitWidth / PIXELS_PER_SECOND}s`;
+  }
+
+  function buildAll() {
+    tracks.forEach(buildTicker);
+  }
+
+  buildAll();
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(buildAll, 200);
+  });
+})();
+
+// ═══════════════════════════════════════════════════════════════
 // PROJECTS HORIZONTAL SCROLL HINT
 // ═══════════════════════════════════════════════════════════════
 (function initProjectsScrollHint() {
